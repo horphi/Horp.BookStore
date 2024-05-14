@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="1.4.1" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+		<ProjectReference Include="..\..\..\abp\modules\basic-theme\src\Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme\Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\abp\framework\src\Volo.Abp.Autofac.WebAssembly\Volo.Abp.Autofac.WebAssembly.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\abp\modules\identity\src\Volo.Abp.Identity.Blazor.WebAssembly\Volo.Abp.Identity.Blazor.WebAssembly.csproj" />
+    <ProjectReference Include="..\..\..\abp\modules\tenant-management\src\Volo.Abp.TenantManagement.Blazor.WebAssembly\Volo.Abp.TenantManagement.Blazor.WebAssembly.csproj" />
+    <ProjectReference Include="..\..\..\abp\modules\setting-management\src\Volo.Abp.SettingManagement.Blazor.WebAssembly\Volo.Abp.SettingManagement.Blazor.WebAssembly.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Horp.BookStore.HttpApi.Client\Horp.BookStore.HttpApi.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+</Project>
